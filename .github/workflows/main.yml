@@ -12,7 +12,7 @@ jobs:
 
       # Zip Dockerfile for upload
       - name: Generate Deployment Package
-        run: zip -r deploy.zip * -x "**node_modules**"
+        run: zip -r deploy.zip * -x "*.git*"
         
       - name: Get timestamp
         uses: gerred/actions/current-time@master
@@ -28,12 +28,12 @@ jobs:
           flags: 'g'
 
       - name: Deploy to EB
-        uses: einaregilsson/beanstalk-deploy@v14
+        uses: einaregilsson/beanstalk-deploy@v21
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: beanstalk-engineer-v2
-          environment_name: BeanstalkEngineerV2-env
-          version_label: "the-simple-engineer-deployment-${{ steps.format-time.outputs.replaced }}"
-          region: us-east-2
+          application_name: proteus-live3
+          environment_name: kafkaTest-1
+          version_label: "kafka-test1-deployment-${{ steps.format-time.outputs.replaced }}"
+          region: us-east-1
           deployment_package: deploy.zip
