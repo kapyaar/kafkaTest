@@ -10,7 +10,7 @@ RUN apt-get update --fix-missing \
     && rm -rf /var/lib/apt/lists/*
 
 # KAFKA
-RUN git clone --depth 1 --branch v0.9.5 https://github.com/edenhill/librdkafka.git \
+RUN git clone --depth 1 --branch master https://github.com/confluentinc/librdkafka.git \
     && ( \
         cd librdkafka \
         && ./configure \

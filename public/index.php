@@ -17,4 +17,4 @@ if (!$producer->getMetadata(false, $topic, 2000)) {
 
 $topic->produce(RD_KAFKA_PARTITION_UA, 0, $_SERVER['QUERY_STRING']);
 
-echo "Message published\n";
+echo $_SERVER['QUERY_STRING']. "Message published in K2\n";
