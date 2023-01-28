@@ -2,7 +2,7 @@ name: Test & Deploy
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   test-and-deploy:
     runs-on: ubuntu-latest
