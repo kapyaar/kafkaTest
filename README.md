@@ -1,6 +1,6 @@
 # Php-Kafka demo
 
-Example docker environment where php can write and read from kafka.
+Example docker environment where php can write and read from kafka. Edited by AVC
 
 ## Requirements
 
